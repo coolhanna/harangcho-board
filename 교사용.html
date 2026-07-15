@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store">
+<title>하랑초 소통 게시판 · 교사용</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand" onclick="App.goHome()">
+        <img class="brand-emblem-img" src="assets/logo.png"
+             onerror="this.onerror=null; this.src='assets/logo.svg';" alt="하랑초 교표">
+        <div class="brand-text">
+          <div class="t1">하랑초 소통 게시판<span class="teacher-badge">교사용</span></div>
+          <div class="t2">선생님 공지 작성 공간</div>
+        </div>
+      </div>
+      <div class="header-spacer"></div>
+      <div id="authArea"></div>
+    </div>
+  </header>
+
+  <!-- 본문 -->
+  <main class="wrap" id="app"></main>
+
+  <button class="fab" onclick="App.tryWrite()">📢 공지 작성</button>
+
+  <footer class="site-footer">
+    하랑초 소통 게시판 · 교사용 🍎
+  </footer>
+
+  <!-- 모달 마운트 -->
+  <div class="overlay" id="overlay"><div class="modal" id="modal" style="position:relative;"></div></div>
+  <div class="toast" id="toast"></div>
+
+  <script>window.HARANG_MODE = "teacher";</script>
+  <script src="js/moderation.js?v=3"></script>
+  <script src="js/store.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>

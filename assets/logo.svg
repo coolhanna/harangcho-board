@@ -1,0 +1,27 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="하랑초등학교 교표">
+  <defs>
+    <path id="topArc" d="M 100,100 m -82,0 a 82,82 0 1,1 164,0" fill="none"/>
+    <path id="botArc" d="M 100,100 m -70,0 a 70,70 0 1,0 140,0" fill="none"/>
+  </defs>
+
+  <!-- 바깥 초록 링 -->
+  <circle cx="100" cy="100" r="99" fill="#6FA02C"/>
+  <circle cx="100" cy="100" r="95" fill="#A6CE4E"/>
+  <!-- 안쪽 크림 -->
+  <circle cx="100" cy="100" r="74" fill="#EEF4CE"/>
+
+  <!-- 위쪽 곡선 영문 교명 -->
+  <text font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" letter-spacing="1.2">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">HARANG ELEMENTARY &amp; MIDDLE SCHOOL</textPath>
+  </text>
+
+  <!-- 가운데 ㅎㄹ : ㅎ(주황) ㄹ(파랑) -->
+  <text x="100" y="118" text-anchor="middle"
+        font-family="'Malgun Gothic','Pretendard',sans-serif" font-size="66" font-weight="900" letter-spacing="-2">
+    <tspan fill="#F5931E">ㅎ</tspan><tspan fill="#2E5CB8">ㄹ</tspan>
+  </text>
+
+  <!-- 아래 한글 교명 -->
+  <text x="100" y="152" text-anchor="middle"
+        font-family="'Malgun Gothic','Pretendard',sans-serif" font-size="15" font-weight="800" fill="#4F6E12" letter-spacing="1">하랑초등학교</text>
+</svg>

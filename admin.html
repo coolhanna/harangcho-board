@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store">
+<title>관리자 마스터 · 하랑초 게시판</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="css/style.css?v=3">
+<style>
+  body{background:#F4F2EA;}
+  .admin-header{background:var(--ink);color:#fff;padding:0;position:sticky;top:0;z-index:40;}
+  .admin-header .header-inner{height:60px;}
+  .admin-header .t1{font-size:16px;font-weight:800;color:#fff;}
+  .admin-header .t2{font-size:11px;color:#C9C7BE;}
+  .admin-header .master-badge{margin-left:auto;font-size:12px;font-weight:700;color:var(--ink);
+    background:var(--orange);padding:6px 14px;border-radius:var(--pill);}
+  .gate{max-width:400px;margin:80px auto;background:#fff;border:1px solid var(--line);
+    border-radius:20px;padding:34px 30px;box-shadow:var(--shadow);text-align:center;}
+  .gate .lock{font-size:44px;margin-bottom:10px;}
+  .gate h2{font-size:20px;font-weight:800;margin:0 0 6px;}
+  .gate p{font-size:13px;color:var(--muted);margin:0 0 22px;}
+  .admin-tabs{display:flex;gap:8px;margin:24px 0 18px;}
+  .admin-tabs button{font-size:14px;font-weight:700;color:var(--muted);background:#fff;
+    border:1px solid var(--line);padding:10px 18px;border-radius:var(--pill);}
+  .admin-tabs button.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .admin-tabs button .badge{display:inline-block;min-width:18px;padding:0 6px;margin-left:6px;
+    background:#E24B4A;color:#fff;font-size:11px;border-radius:9px;line-height:18px;}
+  .admin-tabs button.active .badge{background:var(--orange);color:var(--ink);}
+  .rep-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+    margin-bottom:12px;box-shadow:var(--shadow);}
+  .rep-card .rc-top{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+  .rep-card .rc-cat{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;
+    background:var(--blue-soft);color:var(--blue-ink);}
+  .rep-card .rc-flag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;
+    background:#FDECEC;color:#C23B3B;}
+  .rep-card .rc-status{margin-left:auto;font-size:12px;color:var(--faint);}
+  .rep-card h3{font-size:16px;font-weight:800;margin:0 0 6px;}
+  .rep-card .rc-body{font-size:14px;color:#33322E;background:var(--cream);border-radius:10px;
+    padding:12px 14px;white-space:pre-wrap;line-height:1.6;margin-bottom:10px;}
+  .rep-card .rc-reason{font-size:13px;color:var(--muted);margin-bottom:12px;}
+  .rep-card .rc-reason b{color:#C23B3B;}
+  .rep-card .rc-meta{font-size:12px;color:var(--faint);margin-bottom:12px;}
+  .rep-actions{display:flex;gap:8px;}
+  .rep-actions button{font-size:13px;font-weight:700;border:none;padding:9px 16px;border-radius:10px;}
+  .rep-actions .ok{background:var(--green-soft);color:var(--green-ink);}
+  .rep-actions .del{background:#FDECEC;color:#C23B3B;}
+  .post-row{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+    margin-bottom:8px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow);}
+  .post-row .pr-title{font-weight:700;font-size:15px;}
+  .post-row .pr-meta{font-size:12px;color:var(--faint);}
+  .post-row .del{margin-left:auto;background:#FDECEC;color:#C23B3B;border:none;font-weight:700;
+    font-size:13px;padding:8px 14px;border-radius:10px;flex-shrink:0;}
+</style>
+</head>
+<body>
+
+<header class="admin-header">
+  <div class="wrap header-inner">
+    <div class="brand-text">
+      <div class="t1">🛡️ 관리자 마스터</div>
+      <div class="t2">하랑초 소통 게시판 · 관리 전용</div>
+    </div>
+    <span class="master-badge" id="masterBadge" style="display:none;">MASTER</span>
+  </div>
+</header>
+
+<main class="wrap" id="adminApp"></main>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/moderation.js?v=3"></script>
+<script src="js/store.js?v=3"></script>
+<script src="js/admin.js?v=3"></script>
+</body>
+</html>
