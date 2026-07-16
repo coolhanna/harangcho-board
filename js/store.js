@@ -4,7 +4,7 @@
    (3단계에서 Supabase로 교체 예정)
    ========================================================= */
 (function(global){
-  const KEY = "harang_board_v1";
+  const KEY = "harang_board_v2";   // 버전 올리면 기존 저장 데이터 무시하고 새 시드로 시작
   const CATS = ["공지","자유게시판","건의함","투표"];
 
   function now(){ return Date.now(); }
@@ -30,43 +30,7 @@
         { id:uid(), cat:"공지", title:"도서관 운영 시간 변경 안내",
           body:"방학 동안 도서관은 오전 9시~오후 1시까지 운영합니다. 책 반납은 1층 반납함을 이용해 주세요.",
           author:"도서관", authorId:"admin", pinned:false,
-          created:t-5*day, views:120, likes:8, likedBy:[], comments:[] },
-
-        { id:uid(), cat:"자유게시판", title:"오늘 급식 진짜 최고였음 🍚",
-          body:"돈까스에 크림스프까지... 오늘 급식 드신 분 손!! 다음에 또 나왔으면 좋겠어요.",
-          author:"4학년 김하랑", authorId:"u_harang", pinned:false,
-          created:t-6*3600000, views:88, likes:12, likedBy:[], comments:[
-            {who:"4학년 최민서", text:"인정.. 돈까스 두 개 먹음", time:t-5*3600000},
-            {who:"6학년 정예린", text:"부럽다 우리반은 다 떨어졌었는데", time:t-3*3600000},
-            {who:"4학년 김하랑", text:"헐 일찍 가야됨 ㅋㅋ", time:t-2*3600000}
-          ]},
-        { id:uid(), cat:"자유게시판", title:"방학숙제 다 한 사람 있어요?",
-          body:"저는 독후감만 남았는데.. 다들 어디까지 했나요? 같이 힘내요 💪",
-          author:"5학년 한지우", authorId:"u_jiwoo", pinned:false,
-          created:t-1*day, views:64, likes:5, likedBy:[], comments:[
-            {who:"5학년 오지호", text:"저는 아직 시작도 못했어요 ㅠㅠ", time:t-20*3600000}
-          ]},
-
-        { id:uid(), cat:"건의함", title:"운동장에 그늘막을 설치해 주세요",
-          body:"점심시간에 운동장에서 놀 때 너무 더워요. 벤치 쪽에 그늘막이 있으면 좋겠습니다. 많은 친구들이 원하고 있어요!",
-          author:"6학년 강도윤", authorId:"u_doyoon", pinned:false,
-          created:t-3*day, views:156, likes:31, likedBy:[], comments:[
-            {who:"학생회", text:"좋은 의견 감사합니다. 회의 때 안건으로 올릴게요!", time:t-2*day}
-          ]},
-        { id:uid(), cat:"건의함", title:"화장실 비누를 자주 채워주세요",
-          body:"손 씻으려는데 비누가 자주 비어 있어요. 위생을 위해 신경 써주시면 감사하겠습니다.",
-          author:"3학년 윤서아", authorId:"u_seoa", pinned:false,
-          created:t-4*day, views:98, likes:19, likedBy:[], comments:[] },
-
-        { id:uid(), cat:"투표", title:"[투표] 가을 학예회 반 공연 주제 정하기",
-          body:"우리 반 학예회 공연 무엇으로 할까요? 익명 투표예요. 의견은 댓글로 남겨주세요!",
-          author:"학생회장", authorId:"u_president", pinned:false,
-          created:t-12*3600000, views:210, likes:15, likedBy:[],
-          options:[{text:"합창",votes:5},{text:"연극",votes:8},{text:"댄스",votes:14},{text:"사물놀이",votes:3}], votedBy:[],
-          comments:[
-            {who:"5학년 임채원", text:"댄스 가자!!", time:t-10*3600000},
-            {who:"5학년 서준우", text:"저는 연극이요 🎭", time:t-8*3600000}
-          ]}
+          created:t-5*day, views:120, likes:8, likedBy:[], comments:[] }
       ],
       reports:[],      // AI 오판 신고 (관리자만 열람)
       session:null     // 로그인 사용자
